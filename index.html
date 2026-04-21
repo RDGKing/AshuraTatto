@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ASHURA Tattoo</title>
+    <title>ASHURA Tattoo | Arte en Piel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASHURA Tattoo - Estudio de tatuajes profesional. Arte forjado en tinta con estilo único y personalizado.">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -13,85 +14,262 @@
     <link rel="icon" href="images/favicon.ico">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos adicionales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
+    <!-- Loader -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
 
     <nav class="nav">
-        <div class="logo">ASHURA</div>
-        <div class="menu-toggle" id="menu-toggle">☰</div>
-        <ul id="nav-links">
-            <li><a href="#trabajos">Trabajos</a></li>
-            <li><a href="#filosofia">Filosofía</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">ASHURA</span>
+                <span class="logo-sub">TATTOO</span>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-links">
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="#trabajos" class="nav-link">Trabajos</a></li>
+                <li><a href="#filosofia" class="nav-link">Filosofía</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header class="hero">
-        <div class="overlay"></div>
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles"></div>
         <div class="hero-content">
-            <h1>ASHURA</h1>
-            <p>Arte forjado en tinta</p>
-            <a href="https://www.instagram.com/uli_law.19/" target="_blank" class="btn-outline">
-                Agendar cita
-            </a>
+            <div class="hero-badge">Estudio Profesional</div>
+            <h1 class="hero-title">
+                <span class="title-line">ASHURA</span>
+                <span class="title-sub">TATTOO</span>
+            </h1>
+            <p class="hero-description">Arte forjado en tinta • Identidad grabada en piel</p>
+            <div class="hero-buttons">
+                <a href="https://www.instagram.com/uli_law.19/" target="_blank" class="btn-primary">
+                    <i class="fab fa-instagram"></i> Agendar Cita
+                </a>
+                <a href="#trabajos" class="btn-outline">
+                    <i class="fas fa-images"></i> Ver Portfolio
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Descubre más</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
-    <section id="trabajos">
-        <h2 class="section-title">Trabajos</h2>
+    <section id="trabajos" class="trabajos-section">
+        <div class="section-header">
+            <span class="section-subtitle">Portfolio</span>
+            <h2 class="section-title">Trabajos Recientes</h2>
+            <div class="title-decoration"></div>
+        </div>
+
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="blackwork">Blackwork</button>
+            <button class="filter-btn" data-filter="realismo">Realismo</button>
+            <button class="filter-btn" data-filter="geometrico">Geométrico</button>
+        </div>
 
         <div class="carousel-container">
-            <button class="arrow left" id="prev">&#10094;</button>
+            <button class="arrow left" id="prev" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
-            <div class="carousel" id="carousel">
-                <img src="images/tattoo_1.jpg" alt="Tatuaje 1" class="carousel-item">
-                <img src="images/tattoo_2.jpg" alt="Tatuaje 2" class="carousel-item">
-                <img src="images/tattoo_3.jpg" alt="Tatuaje 3" class="carousel-item">
-                <img src="images/tattoo_4.jpg" alt="Tatuaje 4" class="carousel-item">
-                <img src="images/tattoo_5.jpg" alt="Tatuaje 5" class="carousel-item">
-                <img src="images/tattoo_6.jpg" alt="Tatuaje 6" class="carousel-item">
-                <img src="images/tattoo_7.jpg" alt="Tatuaje 7" class="carousel-item">
+            <div class="carousel-wrapper">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item" data-category="blackwork">
+                        <img src="images/tattoo_1.jpg" alt="Tatuaje Blackwork 1" loading="lazy">
+                        <div class="item-overlay">
+                            <span class="item-category">Blackwork</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-category="realismo">
+                        <img src="images/tattoo_2.jpg" alt="Tatuaje Realismo 1" loading="lazy">
+                        <div class="item-overlay">
+                            <span class="item-category">Realismo</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-category="geometrico">
+                        <img src="images/tattoo_3.jpg" alt="Tatuaje Geométrico 1" loading="lazy">
+                        <div class="item-overlay">
+                            <span class="item-category">Geométrico</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-category="blackwork">
+                        <img src="images/tattoo_4.jpg" alt="Tatuaje Blackwork 2" loading="lazy">
+                        <div class="item-overlay">
+                            <span class="item-category">Blackwork</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-category="realismo">
+                        <img src="images/tattoo_5.jpg" alt="Tatuaje Realismo 2" loading="lazy">
+                        <div class="item-overlay">
+                            <span class="item-category">Realismo</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-category="geometrico">
+                        <img src="images/tattoo_6.jpg" alt="Tatuaje Geométrico 2" loading="lazy">
+                        <div class="item-overlay">
+                            <span class="item-category">Geométrico</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-category="blackwork">
+                        <img src="images/tattoo_7.jpg" alt="Tatuaje Blackwork 3" loading="lazy">
+                        <div class="item-overlay">
+                            <span class="item-category">Blackwork</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <button class="arrow right" id="next">&#10095;</button>
+            <button class="arrow right" id="next" aria-label="Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
+
+        <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
-    <section id="filosofia" class="filosofia">
-        <div class="text-box">
-            <h2>Filosofía</h2>
-            <p>
-                Cada tatuaje representa fuerza, historia y carácter.
-                No se trata solo de tinta, sino de identidad.
-                Cada diseño es único y creado para trascender.
-            </p>
-        </div>
-    </section>
+    <section id="filosofia" class="filosofia-section">
+        <div class="filosofia-container">
+            <div class="filosofia-content">
+                <div class="section-header light">
+                    <span class="section-subtitle">Nuestra Esencia</span>
+                    <h2 class="section-title">Filosofía</h2>
+                    <div class="title-decoration"></div>
+                </div>
+                
+                <div class="filosofia-grid">
+                    <div class="filosofia-card">
+                        <div class="card-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Fuerza</h3>
+                        <p>Cada trazo representa el poder interior que llevamos dentro.</p>
+                    </div>
+                    
+                    <div class="filosofia-card">
+                        <div class="card-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Historia</h3>
+                        <p>Tu piel cuenta tu viaje, nosotros lo plasmamos con arte.</p>
+                    </div>
+                    
+                    <div class="filosofia-card">
+                        <div class="card-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Carácter</h3>
+                        <p>Diseños únicos que definen tu personalidad y esencia.</p>
+                    </div>
+                </div>
 
-    <section id="contacto" class="contacto">
-        <div class="contact-content">
-            <h2>Contacto</h2>
-            <p>Para consultas y diseños personalizados, contáctame por redes sociales.</p>
-
-            <div class="redes">
-                <a href="https://www.instagram.com/uli_law.19/" target="_blank" class="social-btn">
-                    Instagram
-                </a>
-                <a href="https://www.facebook.com/ulizez.arteaga.7" target="_blank" class="social-btn">
-                    Facebook
-                </a>
+                <div class="filosofia-quote">
+                    <p class="quote-text">"Cada tatuaje representa fuerza, historia y carácter. No se trata solo de tinta, sino de identidad. Cada diseño es único y creado para trascender."</p>
+                    <span class="quote-author">— ASHURA</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        © 2026 ASHURA Tattoo
+    <section id="contacto" class="contacto-section">
+        <div class="contacto-container">
+            <div class="section-header">
+                <span class="section-subtitle">Conectemos</span>
+                <h2 class="section-title">Contacto</h2>
+                <div class="title-decoration"></div>
+            </div>
+
+            <div class="contacto-content">
+                <div class="contacto-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Ciudad de México, CDMX</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lunes a Sábado: 11:00 - 20:00</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contacto@ashuratattoo.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-social">
+                    <p class="social-intro">Para consultas y diseños personalizados, contáctame por redes sociales.</p>
+                    
+                    <div class="redes">
+                        <a href="https://www.instagram.com/uli_law.19/" target="_blank" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/ulizez.arteaga.7" target="_blank" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">ASHURA</span>
+                <span class="logo-sub">TATTOO</span>
+            </div>
+            <p class="footer-tagline">Arte forjado en tinta</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/uli_law.19/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/ulizez.arteaga.7" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2026 ASHURA Tattoo • Todos los derechos reservados</p>
+        </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Lightbox para imágenes -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-img" src="" alt="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
 
+    <script src="js/script.js"></script>
 </body>
+
 </html>
